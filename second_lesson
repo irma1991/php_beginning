@@ -1,0 +1,67 @@
+<?php
+ $duomenys = array('Jonas', 12, true);
+ $prekes = ['Kompiuteris', 'Telefonas', 'PHP Storm'];
+ $prekes[] = "Pienas";
+ $prekes[12544] = "Duona";
+ $kiekis = count($prekes);
+
+ echo $kiekis;
+
+for($i = 0; $i <= count($prekes); $i++){
+    echo $prekes[$i];
+}
+
+foreach ($prekes as $id => $preke){
+    echo "$id : $preke<br>";
+}
+
+$prekes = [
+    'PRK-12' => "MacBook",
+    'IP-4589' => 'Telefonas labai geras',
+    'GR-897' => 'Gramofonas'
+];
+
+foreach ($prekes as $id => $preke){
+    if($id == 'IP-4589'){
+        echo "$id: $preke (Prekes sandelyje nera) ";
+    } else{
+        echo "$id: $preke ";
+    }
+}
+
+$knygos = [
+    'GROZINE' => [
+        'KN1' => 'Pirma grozine',
+        'KN2' => 'Antra grozine',
+        'KN3' => 'Trecia grozine'
+    ],
+    'PSICHOLOGIJA' => [
+        'KN4' => 'Ketvirta psichologija',
+        'KN5' => 'Penkta psichologija',
+        'KN6' => 'Sesta psichologija'
+    ],
+    'IT' => [
+        'KN7' => 'Septinta informacines technologijos',
+        'KN8' => 'Astunta informacines technologijos',
+        'KN9' => 'Devinta informacines technologijos'
+    ]
+];
+
+foreach ($knygos as $id => $knyga){
+    echo "$id";
+    foreach ($knyga as $id => $knygele){
+        echo "$id: $knygele";
+    }
+}
+?>
+
+<ul>
+    <?php foreach ($knygos as $id => $knyga):?>
+        <li><?=$id;?></li>
+        <ul>
+        <?php foreach ($knyga as $id => $knygele):?>
+            <li><?=$id;?>: <?=$knygele;?></li>
+    <?php endforeach;?>
+        </ul>
+    <?php endforeach;?>
+</ul>
