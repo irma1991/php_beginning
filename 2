@@ -1,0 +1,34 @@
+<!doctype html>
+<html lange="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title><?=siteName;?></title>
+</head>
+<body>
+<h1>
+    <?=siteName;?>
+</h1>
+<nav>
+<ul>
+    <?php foreach ($klase as $id => $mokinys):?>
+        <li><?=$id;?></li>
+        <?php foreach ($mokinys as $info => $bendraInfo):?>
+            <li><?=$info;?></li>
+            <?php if (is_array($bendraInfo)):?>
+                <?php foreach ($bendraInfo as $dalykas => $pazimys):?>
+                    <li><?=$dalykas;?></li>
+                    <li><?=$pazimys;?></li>
+    <?php endforeach;?>
+                <?php else:?>
+                <?=$bendraInfo;?>
+            <?php endif;?>
+    <?php endforeach;?>
+    <?php endforeach;?>
+</ul>
+</nav>
+</body>
+</html>
